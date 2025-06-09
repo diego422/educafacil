@@ -223,22 +223,22 @@ export default function AcercaPage() {
               <h3 className="text-xl font-bold mb-4">Enlaces</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/" className="text-white hover:underline hover:text-gray-300 transition-colors">
                     Inicio
                   </Link>
                 </li>
                 <li>
-                  <Link href="/primaria" className="hover:underline">
+                  <Link href="/primaria" className="text-white hover:underline hover:text-gray-300 transition-colors">
                     Primaria
                   </Link>
                 </li>
                 <li>
-                  <Link href="/secundaria" className="hover:underline">
+                  <Link href="/secundaria" className="text-white hover:underline hover:text-gray-300 transition-colors">
                     Secundaria
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docentes" className="hover:underline">
+                  <Link href="/docentes" className="text-white hover:underline hover:text-gray-300 transition-colors">
                     Docentes
                   </Link>
                 </li>

@@ -7,8 +7,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="bg-gradient-to-r from-purple-600 to-blue-500 p-4 shadow-md">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <header className="header">
+        <div className="container flex-col md:flex-row flex items-center justify-between">
           <div className="flex items-center gap-3 mb-4 md:mb-0">
             <GraduationCap className="h-10 w-10 text-white" />
             <h1 className="text-3xl font-bold text-white">EducaFácil</h1>
@@ -37,8 +37,8 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-400 to-purple-500 py-16 text-white relative">
-        <div className="container mx-auto relative z-10 px-4">
+      <section className="hero-section">
+        <div className="container relative z-10 px-4">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-bold mb-4">Aprendizaje para todos</h2>
             <p className="text-xl mb-6">
@@ -46,10 +46,10 @@ export default function HomePage() {
               materiales para estudiar sin conexión.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black" asChild>
+              <Button size="lg" className="btn-yellow" asChild>
                 <Link href="/primaria">Primaria</Link>
               </Button>
-              <Button size="lg" className="bg-green-500 hover:bg-green-600 text-black" asChild>
+              <Button size="lg" className="btn-green" asChild>
                 <Link href="/secundaria">Secundaria</Link>
               </Button>
             </div>
@@ -58,12 +58,12 @@ export default function HomePage() {
       </section>
 
       {/* Main Content */}
-      <main className="flex-1 container mx-auto py-8 px-4">
+      <main className="flex-1 container py-8 px-4">
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-center text-purple-700">Niveles Educativos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Primaria Card */}
-            <Card className="overflow-hidden border-4 border-yellow-400 hover:shadow-xl transition-shadow">
+            <Card className="nivel-card-primaria">
               <CardContent className="p-0">
                 <div className="bg-yellow-100 p-6">
                   <h3 className="text-2xl font-bold text-yellow-700 mb-4">Primaria</h3>
@@ -80,7 +80,7 @@ export default function HomePage() {
                       </Button>
                     ))}
                   </div>
-                  <Button className="w-full bg-yellow-600 hover:bg-yellow-700 text-white" asChild>
+                  <Button className="w-full btn-yellow text-black" asChild>
                     <Link href="/primaria">Explorar Primaria</Link>
                   </Button>
                 </div>
@@ -88,7 +88,7 @@ export default function HomePage() {
             </Card>
 
             {/* Secundaria Card */}
-            <Card className="overflow-hidden border-4 border-green-400 hover:shadow-xl transition-shadow">
+            <Card className="nivel-card-secundaria">
               <CardContent className="p-0">
                 <div className="bg-green-100 p-6">
                   <h3 className="text-2xl font-bold text-green-700 mb-4">Secundaria</h3>
@@ -98,14 +98,14 @@ export default function HomePage() {
                       <Button
                         key={grado}
                         variant="outline"
-                        className="bg-green-500 hover:bg-green-600 text-black border-green-600"
+                        className="bg-green-500 hover:bg-green-600 text-white border-green-600"
                         asChild
                       >
                         <Link href={`/secundaria/${grado}`}>{grado}° Grado</Link>
                       </Button>
                     ))}
                   </div>
-                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white" asChild>
+                  <Button className="w-full btn-green text-white" asChild>
                     <Link href="/secundaria">Explorar Secundaria</Link>
                   </Button>
                 </div>
@@ -124,9 +124,10 @@ export default function HomePage() {
               { name: "Ciencias", color: "bg-green-500", icon: "🔬" },
               { name: "Historia", color: "bg-amber-500", icon: "🏛️" },
               { name: "Inglés", color: "bg-purple-500", icon: "🌎" },
-              { name: "Arte", color: "bg-pink-500", icon: "🎨" },
+              { name: "Educación Fisica", color: "bg-pink-500", icon: "🎨" },
             ].map((materia, index) => (
-              <Link href={`/materias/${materia.name.toLowerCase()}`} key={index} className="block">
+              <Link href={`/materias/${materia.name.toLowerCase()}`} key={index} 
+              className="block no-underline text-white">
                 <Card
                   className={`${materia.color} text-white hover:shadow-lg transition-shadow h-full flex flex-col items-center justify-center py-6 text-center`}
                 >
@@ -162,7 +163,7 @@ export default function HomePage() {
                         {recurso.type}
                       </span>
                     </div>
-                    <Button size="sm" variant="ghost" className="text-blue-600 hover:text-blue-800">
+                    <Button size="sm" variant="ghost" className="text-blue-600 hover:text-blue-800 shadow-none border-none focus:ring-0 outline-none px-1">
                       <Download className="h-4 w-4" />
                     </Button>
                   </div>
@@ -170,7 +171,7 @@ export default function HomePage() {
                   <p className="text-sm text-gray-600">
                     Material educativo para reforzar el aprendizaje en el aula y en casa.
                   </p>
-                  <Button variant="link" className="p-0 h-auto mt-2">
+                  <Button variant="link" className="p-0 h-auto mt-2 shadow-none border-none focus:ring-0 outline-none text-blue-600 hover:text-blue-800">
                     Ver más
                   </Button>
                 </CardContent>
@@ -200,49 +201,49 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">EducaFácil</h3>
-              <p>Plataforma educativa gratuita para niños y jóvenes de primaria y secundaria.</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Enlaces</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/" className="hover:underline">
-                    Inicio
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/primaria" className="hover:underline">
-                    Primaria
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/secundaria" className="hover:underline">
-                    Secundaria
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/docentes" className="hover:underline">
-                    Docentes
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Contacto</h3>
-              <p>contacto@educafacil.org</p>
-              <p className="mt-4">© {new Date().getFullYear()} EducaFácil. Todos los derechos reservados.</p>
+        {/* Footer */}
+        <footer className="footer">
+          <div className="container px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-xl font-bold mb-4">EducaFácil</h3>
+                <p>Plataforma educativa gratuita para niños y jóvenes de primaria y secundaria.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Enlaces</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="/" className="footer-link">
+                      Inicio
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/primaria" className="footer-link">
+                      Primaria
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/secundaria" className="footer-link">
+                      Secundaria
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/docentes" className="footer-link">
+                      Docentes
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Contacto</h3>
+                <p>contacto@educafacil.org</p>
+                <p className="mt-4">© {new Date().getFullYear()} EducaFácil. Todos los derechos reservados.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </main>
     </div>
   )
 }
