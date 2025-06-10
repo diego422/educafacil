@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/componentes/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/componentes/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/componentes/ui/tab"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/componentes/ui/tabs"
 import { Input } from "@/componentes/ui/input"
 import { Download, Home, Search, FileText, Users, BookMarked } from "lucide-react"
 
