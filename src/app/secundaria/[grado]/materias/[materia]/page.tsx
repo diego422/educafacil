@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/componentes/ui/button"
 import { Card, CardContent } from "@/componentes/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/componentes/ui/tab"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/componentes/ui/tabs"
 import { BookOpen, Download, ChevronLeft, Home, Play, FileText } from "lucide-react"
 
 export default function MateriaSecundariaPage({ params }: { params: { grado: string; materia: string } }) {
