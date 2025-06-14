@@ -1,12 +1,12 @@
 import Link from "next/link"
 import { Button } from "@/componentes/ui/button"
 import { Card, CardContent } from "@/componentes/ui/card"
-import { BookOpen, Download, ChevronLeft, Home } from "lucide-react"
+import { BookOpen, Download, ChevronLeft, Home, Atom } from "lucide-react"
 
 export default function GradoPage({ params }: { params: { grado: string } }) {
   const grado = params.grado
   const materias = [
-    { nombre: "Matemáticas", color: "bg-red-500", icon: "📐", descripcion: "Números, operaciones, geometría y más" },
+    { nombre: "Matematicas", color: "bg-red-500", icon: "📐", descripcion: "Números, operaciones, geometría y más" },
     {
       nombre: "Español",
       color: "bg-blue-500",
@@ -21,7 +21,7 @@ export default function GradoPage({ params }: { params: { grado: string } }) {
     },
     { nombre: "Estudios Sociales", color: "bg-amber-500", icon: "🏛️", descripcion: "Historia, geografía y cultura" },
     { nombre: "Inglés", color: "bg-purple-500", icon: "🌎", descripcion: "Vocabulario, gramática y conversación" },
-    { nombre: "Arte", color: "bg-pink-500", icon: "🎨", descripcion: "Expresión artística y creatividad" },
+    { nombre: "Fisica", color: "bg-pink-500",  icon: "🧪", descripcion: "Expresión artística y creatividad" },
   ]
 
   const recursos = [
@@ -146,7 +146,7 @@ export default function GradoPage({ params }: { params: { grado: string } }) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-6">
+      <footer className="footer">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">

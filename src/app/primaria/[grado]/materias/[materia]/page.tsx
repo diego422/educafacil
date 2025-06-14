@@ -4,9 +4,18 @@ import { Card, CardContent } from "@/componentes/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/componentes/ui/tabs"
 import { BookOpen, Download, ChevronLeft, Home, Play, FileText } from "lucide-react"
 
-export default function MateriaPage({ params }: { params: { grado: string; materia: string } }) {
+interface MateriaPageProps {
+  params: {
+    grado: string
+    materia: string
+  }
+}
+
+export default function MateriaPage({ params }: MateriaPageProps) {
   const { grado, materia } = params
-  const materiaFormatted = materia.charAt(0).toUpperCase() + materia.slice(1).replace(/-/g, " ")
+
+  const decodedMateria = decodeURIComponent(materia)
+  const materiaFormatted = decodedMateria.charAt(0).toUpperCase() + decodedMateria.slice(1).replace(/-/g, " ")
 
   const getColorScheme = () => {
     switch (materia) {
@@ -238,7 +247,7 @@ export default function MateriaPage({ params }: { params: { grado: string; mater
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-6">
+      <footer className="footer">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">

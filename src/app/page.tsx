@@ -124,7 +124,7 @@ export default function HomePage() {
               { name: "Ciencias", color: "bg-green-500", icon: "🔬" },
               { name: "Historia", color: "bg-amber-500", icon: "🏛️" },
               { name: "Inglés", color: "bg-purple-500", icon: "🌎" },
-              { name: "Educación Fisica", color: "bg-pink-500", icon: "🎨" },
+              { name: "Educación Fisica", color: "bg-pink-500", icon: "🧪" },
             ].map((materia, index) => (
               <Link href={`/materias/${materia.name.toLowerCase()}`} key={index} 
               className="block no-underline text-white">
