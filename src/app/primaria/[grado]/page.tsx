@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/componentes/ui/button"
 import { Card, CardContent } from "@/componentes/ui/card"
-import { BookOpen, Download, ChevronLeft, Home, Atom } from "lucide-react"
+import { BookOpen, Download, ChevronLeft, Home } from "lucide-react"
 
 export default function GradoPage({ params }: { params: { grado: string } }) {
   const grado = params.grado
