@@ -8,7 +8,6 @@ export default function MateriaSecundariaPage({ params }: { params: { grado: str
   const { grado, materia } = params
   const materiaFormatted = materia.charAt(0).toUpperCase() + materia.slice(1).replace(/-/g, " ")
 
-  // Configuración de colores según la materia
   const getColorScheme = () => {
     switch (materia) {
       case "matematicas":
@@ -64,7 +63,6 @@ export default function MateriaSecundariaPage({ params }: { params: { grado: str
 
   const colors = getColorScheme()
 
-  // Datos de ejemplo más avanzados para secundaria
   const temas = [
     { titulo: "Unidad 1: Fundamentos", descripcion: "Conceptos teóricos y bases fundamentales" },
     { titulo: "Unidad 2: Aplicaciones", descripcion: "Casos prácticos y aplicaciones reales" },

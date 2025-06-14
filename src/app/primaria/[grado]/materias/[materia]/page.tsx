@@ -8,7 +8,6 @@ export default function MateriaPage({ params }: { params: { grado: string; mater
   const { grado, materia } = params
   const materiaFormatted = materia.charAt(0).toUpperCase() + materia.slice(1).replace(/-/g, " ")
 
-  // Configuración de colores según la materia
   const getColorScheme = () => {
     switch (materia) {
       case "matematicas":
@@ -48,7 +47,6 @@ export default function MateriaPage({ params }: { params: { grado: string; mater
 
   const colors = getColorScheme()
 
-  // Datos de ejemplo para las diferentes pestañas
   const temas = [
     { titulo: "Tema 1: Introducción", descripcion: "Conceptos básicos y fundamentos" },
     { titulo: "Tema 2: Desarrollo", descripcion: "Aplicaciones y ejemplos prácticos" },
