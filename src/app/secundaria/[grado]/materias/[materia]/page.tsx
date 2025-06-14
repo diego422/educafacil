@@ -4,15 +4,9 @@ import { Card, CardContent } from "@/componentes/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/componentes/ui/tabs"
 import { BookOpen, Download, ChevronLeft, Home, Play, FileText } from "lucide-react"
 
-type MateriaPageProps = {
-  params: {
-    grado: string
-    materia: string
-  }
-}
-
-export default function MateriaPage({ params }: MateriaPageProps) {
+export default function MateriaPage({ params }: { params: Record<string, string> }) {
   const { grado, materia } = params
+
 
   const decodedMateria = decodeURIComponent(materia)
   const materiaFormatted = decodedMateria.charAt(0).toUpperCase() + decodedMateria.slice(1).replace(/-/g, " ")
