@@ -6,7 +6,6 @@ import { Input } from "@/componentes/ui/input"
 import { Download, Home, Search, FileText, Users, BookMarked } from "lucide-react"
 
 export default function DocentesPage() {
-  // Datos de ejemplo para las diferentes pestañas
   const materialesDidacticos = [
     { titulo: "Guía para enseñanza de matemáticas", nivel: "Primaria", tipo: "PDF", tamaño: "4.2 MB" },
     { titulo: "Actividades de lectura comprensiva", nivel: "Primaria", tipo: "PDF", tamaño: "2.8 MB" },
