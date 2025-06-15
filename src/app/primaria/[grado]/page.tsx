@@ -3,8 +3,14 @@ import { Button } from "@/componentes/ui/button"
 import { Card, CardContent } from "@/componentes/ui/card"
 import { BookOpen, Download, ChevronLeft, Home } from "lucide-react"
 
-export default function GradoPage({ params }: { params: { grado: string } }) {
-  const grado = params.grado
+type GradoPageProps = {
+  params: {
+    grado: string
+  }
+}
+
+export default async function GradoPrimariaPage({ params }: GradoPageProps) {
+  const { grado } = await params
   const materias = [
     { nombre: "Matematicas", color: "bg-red-500", icon: "📐", descripcion: "Números, operaciones, geometría y más" },
     {

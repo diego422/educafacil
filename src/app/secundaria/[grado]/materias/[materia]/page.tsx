@@ -4,12 +4,15 @@ import { Card, CardContent } from "@/componentes/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/componentes/ui/tabs"
 import { BookOpen, Download, ChevronLeft, Home, Play, FileText } from "lucide-react"
 
-export default function MateriaPage({
-  params,
-}: {
-  params: { grado: string; materia: string }
-}) {
-  const { grado, materia } = params
+type MateriaPageProps = {
+  params: {
+    grado: string
+    materia: string
+  }
+}
+
+export default async function MateriaSecundariaPage({ params }: MateriaPageProps) {
+  const { grado, materia } = await params
 
 
   const decodedMateria = decodeURIComponent(materia)

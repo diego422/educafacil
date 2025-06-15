@@ -119,15 +119,18 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-6 text-center text-purple-700">Materias Destacadas</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[
-              { name: "Matemáticas", color: "bg-red-500", icon: "📐" },
-              { name: "Español", color: "bg-blue-500", icon: "📝" },
-              { name: "Ciencias", color: "bg-green-500", icon: "🔬" },
-              { name: "Historia", color: "bg-amber-500", icon: "🏛️" },
-              { name: "Inglés", color: "bg-purple-500", icon: "🌎" },
-              { name: "Educación Fisica", color: "bg-pink-500", icon: "🧪" },
+              { name: "Matemáticas", nivel: "primaria", grado: 1, color: "bg-red-500", icon: "📐" },
+              { name: "Español", nivel: "primaria", grado: 2, color: "bg-blue-500", icon: "📝" },
+              { name: "Ciencias", nivel: "secundaria", grado: 7, color: "bg-green-500", icon: "🔬" },
+              { name: "Historia", nivel: "secundaria", grado: 8, color: "bg-amber-500", icon: "🏛️" },
+              { name: "Inglés", nivel: "secundaria", grado: 9, color: "bg-purple-500", icon: "🌎" },
+              { name: "Educación Fisica", nivel: "primaria", grado: 5, color: "bg-pink-500", icon: "🧪" },
             ].map((materia, index) => (
-              <Link href={`/materias/${materia.name.toLowerCase()}`} key={index} 
-              className="block no-underline text-white">
+              <Link
+                href={`/${materia.nivel}/${materia.grado}/materias/${materia.name.toLowerCase().replace(/\s+/g, "-")}`}
+                key={index}
+                className="block no-underline text-white"
+              >
                 <Card
                   className={`${materia.color} text-white hover:shadow-lg transition-shadow h-full flex flex-col items-center justify-center py-6 text-center`}
                 >
@@ -138,6 +141,7 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
 
         {/* Recursos Destacados */}
         <section className="mb-12">
@@ -153,9 +157,8 @@ export default function HomePage() {
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <span
-                        className={`inline-block px-2 py-1 text-xs rounded-full ${
-                          recurso.grade === "Primaria" ? "bg-yellow-100 text-yellow-800" : "bg-green-100 text-green-800"
-                        }`}
+                        className={`inline-block px-2 py-1 text-xs rounded-full ${recurso.grade === "Primaria" ? "bg-yellow-100 text-yellow-800" : "bg-green-100 text-green-800"
+                          }`}
                       >
                         {recurso.grade}
                       </span>
